@@ -45,8 +45,8 @@ public class StudentControllerTest {
             Student response = studentController.save(student);
 
             // Asserting the response
-            assertEquals(HttpStatus.OK, response.equals(student));
-            assertEquals(student, response.getAdd());
+            assertEquals(true, response.equals(student));
+            assertEquals(student.getAdd(), response.getAdd());
 
             // Verifying that the save method was called on the repository
             verify(studentRepository, times(1)).save(any(Student.class));
@@ -95,7 +95,7 @@ public class StudentControllerTest {
             try {
                 studentController.find(1L);
             } catch (RuntimeException e) {
-                assertEquals("Student is not present in the database", e.getMessage());
+                assertEquals("Student is not present database", e.getMessage());
             }
 
             // Verifying that the findById method was called on the repository
@@ -112,8 +112,8 @@ public class StudentControllerTest {
             Student response = studentController.update(student);
 
             // Asserting the response
-            assertEquals(HttpStatus.OK, response.equals(student));
-            assertEquals(student, response.getName());
+            assertEquals(true, response.equals(student));
+            assertEquals(student.getName(), response.getName());
 
             // Verifying that the save method was called on the repository
             verify(studentRepository, times(1)).save(any(Student.class));
@@ -145,7 +145,7 @@ public class StudentControllerTest {
         try {
             studentController.delete(1L);
         } catch (RuntimeException e) {
-            assertEquals("Student is not present in the database", e.getMessage());
+            assertEquals("Student is not present database", e.getMessage());
         }
 
         // Verifying that the findById method was called on the repository

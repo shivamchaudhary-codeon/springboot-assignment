@@ -14,6 +14,13 @@
 	<name>springboot-assign</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+		<jacoco.version>0.8.8</jacoco.version>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.language>java</sonar.language>
+		<sonar.inclusions>./src/**</sonar.inclusions>
+		<sonar.exclusions>./pom.xml</sonar.exclusions>
+
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.3</spring-cloud.version>
 		<sonar.organization>springbootlearningassignment</sonar.organization>
