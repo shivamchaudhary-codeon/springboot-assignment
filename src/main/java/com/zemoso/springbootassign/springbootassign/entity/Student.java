@@ -27,5 +27,5 @@ public class Student {
     private List<Subjects> subjects;
 
     @ManyToMany(cascade = {CascadeType.ALL})
-    private Set<Hobby> hobies = new HashSet<>();
+    private Set<Hobby> hobbies = new HashSet<>();
 }

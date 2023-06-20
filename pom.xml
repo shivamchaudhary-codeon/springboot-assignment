@@ -21,7 +21,7 @@
 		<sonar.inclusions>./src/**</sonar.inclusions>
 		<sonar.exclusions>./pom.xml</sonar.exclusions>
 
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 		<spring-cloud.version>2022.0.3</spring-cloud.version>
 		<sonar.organization>springbootlearningassignment</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -127,25 +127,24 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
+				<version>0.8.5</version>
 				<executions>
 					<execution>
-						<id>prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
+					<!-- attached to Maven test phase -->
 					<execution>
 						<id>report</id>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
-						<configuration>
-							<formats>
-								<format>XML</format>
-							</formats>
-						</configuration>
 					</execution>
+
+
+
 				</executions>
 			</plugin>
 
